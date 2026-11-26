@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NEXUS | Gaming Arena</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+background:#080810;
+color:white;
+font-family:'Poppins',sans-serif;
+}
+
+:root{
+--purple:#a855f7;
+--blue:#00e5ff;
+--dark:#10101c;
+}
+
+header{
+position:fixed;
+top:0;
+width:100%;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(8,8,16,.92);
+backdrop-filter:blur(15px);
+z-index:1000;
+border-bottom:1px solid #29203e;
+}
+
+.logo{
+font-family:Orbitron;
+font-size:24px;
+font-weight:900;
+color:var(--purple);
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:22px;
+font-size:13px;
+transition:.3s;
+}
+
+nav a:hover{
+color:var(--blue);
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+padding:120px 9%;
+background:
+linear-gradient(90deg,rgba(5,5,15,.96),rgba(5,5,15,.35)),
+url('https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1800')
+center/cover;
+}
+
+.hero h1{
+font-family:Orbitron;
+font-size:clamp(38px,7vw,75px);
+line-height:1.2;
+}
+
+.hero h1 span{
+color:var(--purple);
+}
+
+.hero p{
+margin:20px 0;
+color:#ccc;
+max-width:550px;
+}
+
+.btn{
+display:inline-block;
+padding:13px 25px;
+background:var(--purple);
+color:white;
+text-decoration:none;
+border-radius:5px;
+font-weight:600;
+transition:.3s;
+border:none;
+cursor:pointer;
+}
+
+.btn:hover{
+background:var(--blue);
+color:black;
+transform:translateY(-3px);
+box-shadow:0 0 20px var(--blue);
+}
+
+section{
+padding:90px 9%;
+}
+
+.title{
+text-align:center;
+font-family:Orbitron;
+font-size:32px;
+margin-bottom:45px;
+}
+
+.title span{
+color:var(--purple);
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.card{
+background:var(--dark);
+border:1px solid #29203e;
+border-radius:12px;
+overflow:hidden;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:var(--purple);
+box-shadow:0 0 20px #a855f733;
+}
+
+.card img{
+width:100%;
+height:190px;
+object-fit:cover;
+}
+
+.card-content{
+padding:20px;
+}
+
+.card h3{
+font-family:Orbitron;
+font-size:17px;
+margin-bottom:10px;
+}
+
+.card p{
+font-size:13px;
+color:#aaa;
+margin-bottom:15px;
+}
+
+.price{
+color:var(--blue);
+font-size:20px;
+font-weight:700;
+}
+
+.about{
+background:#0d0d19;
+text-align:center;
+}
+
+.about p{
+max-width:750px;
+margin:auto;
+color:#aaa;
+line-height:1.9;
+}
+
+.booking{
+background:
+linear-gradient(#080810e8,#080810ed),
+url('https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=1400')
+center/cover;
+}
+
+form{
+max-width:650px;
+margin:auto;
+padding:30px;
+background:#151523;
+border:1px solid #39304c;
+border-radius:12px;
+}
+
+input,select,textarea{
+width:100%;
+padding:14px;
+margin-bottom:15px;
+background:#090913;
+border:1px solid #343044;
+border-radius:5px;
+color:white;
+font-family:Poppins;
+}
+
+input:focus,select:focus,textarea:focus{
+outline:1px solid var(--purple);
+}
+
+form button{
+width:100%;
+}
+
+.menu{
+text-align:center;
+}
+
+.menu-item{
+background:#151523;
+padding:20px;
+border-radius:8px;
+border:1px solid #30243f;
+}
+
+.gallery img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:10px;
+transition:.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.04);
+}
+
+.contact{
+text-align:center;
+background:#10101c;
+}
+
+.contact p{
+margin:15px;
+color:#bbb;
+}
+
+footer{
+text-align:center;
+padding:25px;
+background:#050509;
+color:#777;
+font-size:13px;
+}
+
+.whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+background:#25D366;
+color:white;
+padding:14px 20px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+z-index:1001;
+}
+
+@media(max-width:800px){
+
+header{
+padding:15px 5%;
+}
+
+nav{
+display:none;
+}
+
+.hero{
+padding:120px 7%;
+}
+
+section{
+padding:70px 6%;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">NEXUS ⚡</div>
+
+<nav>
+<a href="#home">HOME</a>
+<a href="#about">ABOUT</a>
+<a href="#games">GAMES</a>
+<a href="#pricing">PRICING</a>
+<a href="#booking">BOOKING</a>
+<a href="#contact">CONTACT</a>
+</nav>
+
+</header>
+
+
+<!-- HOME -->
+
+<div class="hero" id="home">
+
+<div>
+
+<h1>ENTER THE<br><span>NEXT LEVEL.</span></h1>
+
+<p>
+Welcome to NEXUS Gaming Arena.
+Experience next-generation gaming, powerful PCs,
+competitive esports and unforgettable gaming moments.
+</p>
+
+<a href="#booking" class="btn">BOOK YOUR SESSION ⚡</a>
+
+</div>
+
+</div>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+<h2 class="title">ABOUT <span>NEXUS</span></h2>
+
+<p>
+NEXUS is more than just a gaming café.
+It's a destination for gamers, esports enthusiasts
+and friends who want to experience gaming at its best.
+
+Enjoy powerful gaming PCs, PlayStation consoles,
+competitive tournaments and a premium gaming environment.
+</p>
+
+</section>
+
+
+<!-- GAMING ZONE -->
+
+<section id="games">
+
+<h2 class="title">OUR GAMING <span>ZONE</span></h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=600">
+<div class="card-content">
+<h3>GAMING PC</h3>
+<p>High-performance gaming computers.</p>
+<div class="price">₹60 / Hour</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=600">
+<div class="card-content">
+<h3>PLAYSTATION 5</h3>
+<p>Experience next-generation console gaming.</p>
+<div class="price">₹100 / Hour</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600">
+<div class="card-content">
+<h3>ESPORTS ZONE</h3>
+<p>Compete with other gamers.</p>
+<div class="price">₹80 / Hour</div>
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- GAME LIBRARY -->
+
+<section>
+
+<h2 class="title">POPULAR <span>GAMES</span></h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600">
+<div class="card-content">
+<h3>VALORANT</h3>
+<p>Competitive tactical shooter.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1603481546238-487240415921?w=600">
+<div class="card-content">
+<h3>GTA V</h3>
+<p>Explore an open-world experience.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=600">
+<div class="card-content">
+<h3>MINECRAFT</h3>
+<p>Build, explore and create.</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PRICING -->
+
+<section id="pricing">
+
+<h2 class="title">GAMING <span>PRICING</span></h2>
+
+<div class="cards">
+
+<div class="card card-content">
+<h3>STARTER</h3>
+<p>30 Minutes Gaming</p>
+<div class="price">₹40</div>
+</div>
+
+<div class="card card-content">
+<h3>PRO GAMER</h3>
+<p>1 Hour Gaming</p>
+<div class="price">₹80</div>
+</div>
+
+<div class="card card-content">
+<h3>ELITE</h3>
+<p>3 Hours Gaming</p>
+<div class="price">₹200</div>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOD MENU -->
+
+<section class="menu">
+
+<h2 class="title">GAMER'S <span>MENU</span></h2>
+
+<div class="cards">
+
+<div class="menu-item">
+<h3>🍔 Burger</h3>
+<p>₹99</p>
+</div>
+
+<div class="menu-item">
+<h3>🍕 Pizza</h3>
+<p>₹149</p>
+</div>
+
+<div class="menu-item">
+<h3>🍟 French Fries</h3>
+<p>₹69</p>
+</div>
+
+<div class="menu-item">
+<h3>🥤 Cold Coffee</h3>
+<p>₹79</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- BOOKING -->
+
+<section class="booking" id="booking">
+
+<h2 class="title">BOOK YOUR <span>SESSION</span></h2>
+
+<form id="bookingForm">
+
+<input type="text" id="name"
+placeholder="Your Full Name" required>
+
+<input type="tel" id="phone"
+placeholder="Your Phone Number" required>
+
+<select id="platform" required>
+<option value="">Select Gaming Platform</option>
+<option>Gaming PC</option>
+<option>PlayStation 5</option>
+<option>Esports Zone</option>
+</select>
+
+<input type="date" id="date" required>
+
+<select id="time" required>
+<option value="">Select Time</option>
+<option>10:00 AM</option>
+<option>12:00 PM</option>
+<option>2:00 PM</option>
+<option>4:00 PM</option>
+<option>6:00 PM</option>
+<option>8:00 PM</option>
+</select>
+
+<select id="duration" required>
+<option value="">Select Duration</option>
+<option>30 Minutes</option>
+<option>1 Hour</option>
+<option>3 Hours</option>
+</select>
+
+<textarea id="message"
+placeholder="Additional Message"></textarea>
+
+<button class="btn" type="submit">
+CONFIRM BOOKING ⚡
+</button>
+
+</form>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section>
+
+<h2 class="title">GAMING <span>GALLERY</span></h2>
+
+<div class="cards gallery">
+
+<img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=600">
+
+<img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600">
+
+<img src="https://images.unsplash.com/photo-1603481546238-487240415921?w=600">
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<h2 class="title">CONTACT <span>US</span></h2>
+
+<p>📍 Visit our Gaming Arena</p>
+
+<p>📞 Call us: +91 XXXXXXXXXX</p>
+
+<p>📧 Email: nexusgaming@gmail.com</p>
+
+<p>🎮 Follow us on Instagram</p>
+
+<a href="https://instagram.com/"
+class="btn">FOLLOW US</a>
+
+</section>
+
+
+<footer>
+
+<p>© 2026 NEXUS GAMING ARENA.</p>
+<p>PLAY. COMPETE. DOMINATE.</p>
+
+</footer>
+
+
+<a class="whatsapp"
+href="https://wa.me/919957427294"
+target="_blank">
+WhatsApp
+</a>
+
+
+<script>
+
+// WHATSAPP BOOKING SYSTEM
+
+document.getElementById("bookingForm")
+.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+let name=document.getElementById("name").value;
+let phone=document.getElementById("phone").value;
+let platform=document.getElementById("platform").value;
+let date=document.getElementById("date").value;
+let time=document.getElementById("time").value;
+let duration=document.getElementById("duration").value;
+let message=document.getElementById("message").value;
+
+let whatsappNumber="919957427294";
+
+let text=
+"NEW GAMING BOOKING 🎮%0A%0A"+
+"Name: "+name+"%0A"+
+"Phone: "+phone+"%0A"+
+"Platform: "+platform+"%0A"+
+"Date: "+date+"%0A"+
+"Time: "+time+"%0A"+
+"Duration: "+duration+"%0A"+
+"Message: "+message;
+
+let url="https://wa.me/"+whatsappNumber+"?text="+text;
+
+window.open(url,"_blank");
+
+});
+
+</script>
+
+</body>
+  </html>
